@@ -6,8 +6,9 @@ RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash git openssh make\
     && mkdir -p $SRC_PATH \
-    && git clone https://github.com/neso-io/hive.git "$SRC_PATH" \
-    && git checkout -b master 1.1.0
+    && git clone https://github.com/neso-io/hive.git "$SRC_PATH"
+    
+RUN git checkout -b master 1.1.0
 
 WORKDIR $SRC_PATH
 
